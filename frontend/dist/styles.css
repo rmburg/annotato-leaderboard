@@ -1,0 +1,68 @@
+@font-face {
+  font-family: HankenGrotesk;
+  src: url("hanken-regular.woff2");
+}
+
+* {
+  font-family: HankenGrotesk;
+  box-sizing: border-box;
+}
+
+.row-root {
+  display: flex;
+  alignItems: stretch;
+  height: 100px;
+  position: absolute;
+  transition: all 0.5s ease;
+  width: 100%;
+}
+
+
+.row-bar {
+  height: 75%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  transition: all 0.5s ease;
+}
+
+.row-bar-wrapper {
+  flex-grow: 1;
+}
+
+.row-avatar {
+  width: 100px;
+}
+
+.row-value {
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 800;
+  padding: 30px;
+}
+
+.avatar-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+}
+
+.avatar-img {
+  width: 64px; 
+  height: 64px;
+  border-radius: 50%;
+}
+
+.avatar-crown {
+  width: 64px;
+  position: absolute;
+  transform: translate(-20px, -40px) rotate(-30deg);
+}
+
+body {
+  color: #fff;
+  background-color: #1e1e1f;
+}
