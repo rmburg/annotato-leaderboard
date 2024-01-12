@@ -21,19 +21,17 @@
 .row-bar {
   height: 75%;
   border-radius: 20px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 10px;
   transition: all 0.5s ease;
 }
 
 .row-bar-wrapper {
+  display: flex;
+  align-items: center;
   flex-grow: 1;
 }
 
 .row-avatar {
-  width: 100px;
+  width: 150px;
 }
 
 .row-value {
