@@ -4,13 +4,39 @@ import { hot } from "react-hot-loader/root";
 function color_hash(s: string) {
   var sum = 0;
   for (var i = 0; i < s.length; i++) {
-    sum += s.charCodeAt(i);
+    sum += s.charCodeAt(i) * i * Math.PI;
   }
 
-  sum *= 69872
+  return Math.floor(sum * 9999);
+}
 
+function gen_color(s: string) {
+  const hash = color_hash(s);
+  // return `hsl(${hash % 256},100%,50%)`
+  const colors = [
+    "#40E0D0", // Turquoise
+    "#FF7F50", // Coral
+    "#E6E6FA", // Lavender
+    "#87CEEB", // Sky Blue
+    "#98FB98", // Mint Green
+    "#FFDAB9", // Peach
+    "#B76E79", // Rose Gold
+    "#CCCCFF", // Periwinkle
+    "#F7E7CE", // Champagne
+    "#C8A2C8", // Lilac
+    "#00FFFF", // Aqua
+    "#FDD5B1", // Apricot
+    "#F5FFFA", // Mint Cream
+    "#FF91A4", // Salmon Pink
+    "#DAA520", // Goldenrod
+    "#6495ED", // Cornflower Blue
+    "#367588", // Teal Blue
+    "#ACE1AF", // Celadon
+    "#9966CC", // Amethyst
+    "#E2725B", // Terracotta
+  ]
 
-  return `hsl(${sum % 256},100%,50%)`
+  return colors[hash % (colors.length)];
 }
 
 type BarProps = { name: string; value: number; maxValue: number, idx: number };
@@ -28,7 +54,7 @@ function Bar({ name, value, maxValue, idx }: BarProps) {
           className="row-bar"
           style={{
             width: `${(100 * value) / maxValue}%`,
-            backgroundColor: color_hash(name),
+            backgroundColor: gen_color(name),
           }}
         />
       </div>
