@@ -19,7 +19,7 @@ async fn main() -> Result<()> {
         .with_state(database.clone())
         .route("/score/:user", get(add_score))
         .with_state(database.clone())
-        .fallback(get_service(ServeDir::new("frontend")));
+        .fallback(get_service(ServeDir::new("frontend/dist")));
 
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
 
