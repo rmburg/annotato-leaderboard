@@ -17,11 +17,11 @@
   width: 100%;
 }
 
-
 .row-bar {
   height: 75%;
   border-radius: 20px;
   transition: all 0.5s ease;
+  min-width: 10px;
 }
 
 .row-bar-wrapper {
